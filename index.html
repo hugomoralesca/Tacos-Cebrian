@@ -96,9 +96,8 @@
             background-color: var(--rojo-chile);
         }
 
-        /* Hero Section - ACTUALIZADO CON LA FOTO DEL CAMIÓN */
+        /* Hero Section */
         .hero {
-            /* Usamos image_1.png con un degradado superpuesto para legibilidad */
             background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url('image_1.png') no-repeat center center/cover;
             height: 80vh;
             display: flex;
@@ -143,7 +142,6 @@
         .btn-principal:hover {
             transform: translateY(-3px);
             background-color: var(--verde-mexicano);
-            box-shadow: 0 4px 15px rgba(0, 104, 71, 0.4);
         }
 
         /* Secciones Generales */
@@ -172,12 +170,38 @@
             border-radius: 2px;
         }
 
-        /* Destacados / Especialidades */
+        /* Nueva Sección: Galería */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .gallery-item {
+            overflow: hidden;
+            border-radius: 10px;
+            height: 250px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.03);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Destacados */
         .features {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 30px;
-            margin-top: 20px;
         }
 
         .feature-card {
@@ -187,23 +211,6 @@
             text-align: center;
             box-shadow: 0 5px 20px rgba(0,0,0,0.03);
             border-bottom: 4px solid var(--dorado-maiz);
-            transition: transform 0.3s;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .feature-card i {
-            font-size: 2.5rem;
-            color: var(--rojo-chile);
-            margin-bottom: 20px;
-        }
-
-        .feature-card h3 {
-            font-size: 1.4rem;
-            margin-bottom: 10px;
-            color: var(--oscuro);
         }
 
         /* Horarios & Info de Menú */
@@ -212,7 +219,6 @@
             border-radius: 20px;
             padding: 40px;
             box-shadow: 0 5px 25px rgba(0,0,0,0.02);
-            margin-bottom: 5px;
             border: 1px solid rgba(0, 104, 71, 0.1);
         }
 
@@ -222,42 +228,7 @@
             gap: 40px;
         }
 
-        .schedule-block h3, .menu-block h3 {
-            color: var(--verde-mexicano);
-            font-size: 1.5rem;
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .time-item {
-            margin-bottom: 15px;
-        }
-
-        .time-item p strong {
-            color: var(--rojo-chile);
-        }
-
-        .btn-secundario {
-            display: inline-block;
-            background-color: transparent;
-            color: var(--verde-mexicano);
-            border: 2px solid var(--verde-mexicano);
-            padding: 10px 24px;
-            text-decoration: none;
-            font-weight: 700;
-            border-radius: 25px;
-            margin-top: 15px;
-            transition: all 0.3s;
-        }
-
-        .btn-secundario:hover {
-            background-color: var(--verde-mexicano);
-            color: var(--blanco);
-        }
-
-        /* Reseñas / Testimonios */
+        /* Reseñas */
         .testimonials-section {
             background-color: var(--gris-claro);
             padding: 80px 20px;
@@ -275,103 +246,18 @@
             background-color: var(--blanco);
             padding: 30px;
             border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.02);
-            position: relative;
         }
 
-        .stars {
-            color: var(--dorado-maiz);
-            margin-bottom: 15px;
-        }
-
-        .testimonial-card p {
-            font-style: italic;
-            font-size: 0.95rem;
-            color: #555;
-            margin-bottom: 15px;
-        }
-
-        .user-info {
-            font-weight: 600;
-            font-size: 0.9rem;
-            color: var(--verde-mexicano);
-        }
-
-        .user-info span {
-            font-weight: 400;
-            color: #888;
-            font-size: 0.8rem;
-            display: block;
-        }
-
-        /* Contacto e Mapa */
+        /* Contacto */
         .contact-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 40px;
-            align-items: start;
-        }
-
-        .contact-info h3 {
-            font-size: 1.6rem;
-            margin-bottom: 20px;
-            color: var(--oscuro);
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 20px;
-            font-size: 1.1rem;
-        }
-
-        .contact-item i {
-            font-size: 1.4rem;
-            color: var(--rojo-chile);
-            width: 25px;
-            text-align: center;
-        }
-
-        .contact-item a {
-            color: var(--oscuro);
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .contact-item a:hover {
-            color: var(--verde-mexicano);
-        }
-
-        .social-links {
-            display: flex;
-            gap: 15px;
-            margin-top: 30px;
-        }
-
-        .social-icon {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 45px;
-            height: 45px;
-            background-color: var(--verde-mexicano);
-            color: var(--blanco);
-            border-radius: 50%;
-            text-decoration: none;
-            font-size: 1.2rem;
-            transition: background-color 0.3s, transform 0.3s;
-        }
-
-        .social-icon:hover {
-            background-color: var(--rojo-chile);
-            transform: scale(1.1);
         }
 
         .map-container {
             border-radius: 15px;
             overflow: hidden;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
             height: 350px;
         }
 
@@ -381,182 +267,111 @@
             border: 0;
         }
 
-        /* Footer */
         footer {
             background-color: var(--oscuro);
             color: var(--blanco);
             text-align: center;
             padding: 30px 20px;
-            font-size: 0.9rem;
             border-top: 5px solid var(--rojo-chile);
         }
 
-        /* Responsive */
         @media (max-width: 768px) {
-            .navbar {
-                flex-direction: column;
-                gap: 15px;
-            }
-            .hero-content h1 {
-                font-size: 2.8rem;
-            }
-            .hero-content p {
-                font-size: 1.1rem;
-            }
-            section {
-                padding: 50px 20px;
-            }
-            .section-title {
-                font-size: 2.2rem;
-            }
+            .hero-content h1 { font-size: 2.8rem; }
+            .gallery-grid { grid-template-columns: repeat(2, 1fr); }
         }
     </style>
 </head>
 <body>
 
-    <!-- Navegación -->
     <header>
         <nav class="navbar">
             <a href="#" class="logo">TACOS <span>CEBRIAN</span></a>
             <ul class="nav-menu">
                 <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#galeria">Galería</a></li>
                 <li><a href="#menu-info">Horarios</a></li>
                 <li><a href="#testimonios">Reseñas</a></li>
                 <li><a href="#contacto">Contacto</a></li>
-                <li><a href="https://tacoscebrian.square.site/" target="_blank" class="cta-nav">Ver Menú Completo</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- Hero / Inicio - FONDO ACTUALIZADO -->
     <div id="inicio" class="hero">
         <div class="hero-content">
             <h1>¡Los Mejores Tacos!</h1>
-            <p>Sabor mexicano auténtico, rápido y delicioso. Descubre por qué nuestros clientes siempre regresan.</p>
+            <p>Sabor mexicano auténtico, rápido y delicioso.</p>
             <a href="https://tacoscebrian.square.site/" target="_blank" class="btn-principal">Ordena en Línea</a>
         </div>
     </div>
 
-    <!-- Bloques Destacados -->
-    <section>
-        <div class="features">
-            <div class="feature-card">
-                <i class="fa-solid fa-fire"></i>
-                <h3>Carnes de Calidad</h3>
-                <p>Nuestros clientes recomiendan ampliamente el Pastor, la Asada y la Birria.</p>
-            </div>
-            <div class="feature-card">
-                <i class="fa-solid fa-bolt"></i>
-                <h3>Servicio Veloz</h3>
-                <p>Comida deliciosa preparada al momento y servida rápidamente para que disfrutes al máximo.</p>
-            </div>
-            <div class="feature-card">
-                <i class="fa-solid fa-mug-hot"></i>
-                <h3>Tradición Calientita</h3>
-                <p>Acompaña tu comida con uno de los mejores champurrados de la zona.</p>
-            </div>
+    <!-- Sección de Galería Añadida -->
+    <section id="galeria">
+        <h2 class="section-title">Nuestra Galería</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item"><img src="cer1.png" alt="Tacos Cebrian Foto 1"></div>
+            <div class="gallery-item"><img src="cer2.png" alt="Tacos Cebrian Foto 2"></div>
+            <div class="gallery-item"><img src="cer3.png" alt="Tacos Cebrian Foto 3"></div>
+            <div class="gallery-item"><img src="cer4.png" alt="Tacos Cebrian Foto 4"></div>
+            <div class="gallery-item"><img src="cer5.png" alt="Tacos Cebrian Foto 5"></div>
+            <div class="gallery-item"><img src="cer6.png" alt="Tacos Cebrian Foto 6"></div>
+            <div class="gallery-item"><img src="cer7.png" alt="Tacos Cebrian Foto 7"></div>
+            <div class="gallery-item"><img src="cer8.png" alt="Tacos Cebrian Foto 8"></div>
+            <div class="gallery-item"><img src="cer9.png" alt="Tacos Cebrian Foto 9"></div>
+            <div class="gallery-item"><img src="cer10.png" alt="Tacos Cebrian Foto 10"></div>
         </div>
     </section>
 
-    <!-- Horarios & Link Menú -->
     <section id="menu-info">
         <h2 class="section-title">Horarios y Menú</h2>
         <div class="info-menu-box">
             <div class="grid-info">
                 <div class="schedule-block">
-                    <h3><i class="fa-solid fa-clock"></i> Horario de Atención</h3>
+                    <h3><i class="fa-solid fa-clock"></i> Horarios</h3>
                     <p><strong>Lunes a Sábado</strong></p>
-                    <div class="time-item" style="margin-top: 10px;">
-                        <p><strong>Desayuno:</strong> 6:00 AM - 11:00 AM</p>
-                    </div>
-                    <div class="time-item">
-                        <p><strong>Almuerzo y Cena:</strong> 3:00 PM - 12:00 AM</p>
-                    </div>
-                    <p style="font-size: 0.85rem; color: #777; margin-top: 10px;">* Domingos Cerrado</p>
+                    <p>Desayuno: 6am - 11am</p>
+                    <p>Comida/Cena: 3pm - 12am</p>
                 </div>
                 <div class="menu-block">
-                    <h3><i class="fa-solid fa-utensils"></i> Menú Digital</h3>
-                    <p>Ya puedes consultar de manera interactiva todos nuestros precios, paquetes y platillos de desayuno o cena desde nuestra plataforma oficial de Square.</p>
-                    <a href="https://tacoscebrian.square.site/" target="_blank" class="btn-secundario">Explorar el Menú</a>
+                    <h3><i class="fa-solid fa-utensils"></i> Menú</h3>
+                    <p>Consulta nuestros platillos y precios actualizados.</p>
+                    <a href="https://tacoscebrian.square.site/" target="_blank" class="btn-secundario">Ver Menú Square</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Testimonios (Reseñas de Google) -->
     <div id="testimonios" class="testimonials-section">
-        <h2 class="section-title">Lo Que Dicen Nuestros Clientes</h2>
+        <h2 class="section-title">Reseñas</h2>
         <div class="testimonials-container">
-            
             <div class="testimonial-card">
-                <div class="stars">
-                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                </div>
-                <p>"The food here is delicious and the service is always fast. I think I’ve tried everything on the menu and it never disappoints. My favorite meat is the asada, al pastor and birria. Ooohhh and they have one of the best champurados ever!"</p>
-                <div class="user-info">
-                    sosa salaaa
-                    <span>Local Guide</span>
-                </div>
+                <p>"The food here is delicious and the service is always fast... my favorite meat is the asada Al pastor and birria."</p>
+                <div class="user-info">sosa salaaa <span>Local Guide</span></div>
             </div>
-
             <div class="testimonial-card">
-                <div class="stars">
-                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                </div>
-                <p>"Amazzzzziiiinnnnggg comfort food! Flavorful! Delicious! Totally made my day after having to visit the dreary hospital. 100/10"</p>
-                <div class="user-info">
-                    Riot V
-                    <span>Cliente Satisfecho</span>
-                </div>
+                <p>"Amazzzzziiiinnnnggg comfort food! Flavorful! Delicious! Totally made my day... 100/10"</p>
+                <div class="user-info">Riot V <span>Cliente</span></div>
             </div>
-
-            <div class="testimonial-card">
-                <div class="stars">
-                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                </div>
-                <p>"I really like the Tacos here! They're the best when it comes to tacos!"</p>
-                <div class="user-info">
-                    Charie Harrison
-                    <span>Local Guide</span>
-                </div>
-            </div>
-
         </div>
     </div>
 
-    <!-- Contacto y Ubicación -->
     <section id="contacto">
-        <h2 class="section-title">¿Dónde Estamos?</h2>
+        <h2 class="section-title">Ubicación</h2>
         <div class="contact-grid">
-            
             <div class="contact-info">
-                <h3>Contacto</h3>
-                <div class="contact-item">
-                    <i class="fa-solid fa-phone"></i>
-                    <a href="tel:3233354479">323-335-4479</a>
-                </div>
-                <div class="contact-item">
-                    <i class="fa-solid fa-location-dot"></i>
-                    <span>1707 Pennsylvania Ave, Los Angeles, CA 90033</span>
-                </div>
-                
-                <h3>Síguenos</h3>
+                <div class="contact-item"><i class="fa-solid fa-phone"></i> <a href="tel:3233354479">323-335-4479</a></div>
+                <div class="contact-item"><i class="fa-solid fa-location-dot"></i> <span>1707 Pennsylvania Ave, LA</span></div>
                 <div class="social-links">
                     <a href="https://www.instagram.com/tacos_cebrian/" target="_blank" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
                 </div>
             </div>
-
-            <!-- Mapa Integrado -->
             <div class="map-container">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6611.636733677651!2d-118.2187899968113!3d34.04853001223514!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2c611faa6e019%3A0x2e6ef59298a63c1a!2sTacos%20Cebrian!5e0!3m2!1ses!2smx!4v1780333018680!5m2!1ses!2smx" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6611.636733677651!2d-118.2187899968113!3d34.04853001223514!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2c611faa6e019%3A0x2e6ef59298a63c1a!2sTacos%20Cebrian!5e0!3m2!1ses!2smx!4v1780333018680!5m2!1ses!2smx"></iframe>
             </div>
-
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
-        <p>&copy; 2026 Tacos Cebrian. Todos los derechos reservados. Diseñado profesionalmente.</p>
+        <p>&copy; 2026 Tacos Cebrian. Todos los derechos reservados.</p>
     </footer>
 
 </body>
