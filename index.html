@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tacos Cebrian | El Sabor Auténtico en Los Ángeles</title>
+    <title>Tacos Cebrian | Authentic Mexican Flavor</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Montserrat:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Montserrat:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
     
     <script>
         tailwind.config = {
@@ -14,7 +14,7 @@
                     colors: {
                         brand: {
                             crema: '#F7F4EF',
-                            oliva: '#006847', /* Verde Mexicano Refinado */
+                            oliva: '#006847',
                             olivaLight: '#008459',
                             rojo: '#CE1126',
                             charcoal: '#2D2D2D',
@@ -31,21 +31,29 @@
     <style>
         body { font-family: 'Montserrat', sans-serif; background-color: #F7F4EF; color: #2D2D2D; scroll-behavior: smooth; }
         .font-elegant { font-family: 'Cormorant Garamond', serif; }
+        .letter-track { letter-spacing: 0.2em; }
         .hero-bg {
             background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.6)), url('image_1.png');
             background-size: cover;
             background-position: center;
         }
-        .letter-track { letter-spacing: 0.2em; }
-        .btn-premium {
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            text-transform: uppercase;
-            letter-spacing: 0.15em;
-            font-weight: 500;
+        .section-gap { margin-bottom: 12px; } /* Ajuste de 12px entre módulos */
+        
+        .marquee-mexico {
+            background: linear-gradient(90deg, #006847 0%, #FFFFFF 50%, #CE1126 100%);
+            height: 2px;
+            width: 100%;
+            overflow: hidden;
+            position: relative;
         }
-        .btn-premium:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px -10px rgba(0, 104, 71, 0.4);
+        .marquee-content {
+            display: flex;
+            white-space: nowrap;
+            animation: marquee 20s linear infinite;
+        }
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
         }
     </style>
 </head>
@@ -53,189 +61,100 @@
 
     <nav class="sticky top-0 w-full z-50 bg-[#F2EFE9]/95 backdrop-blur-sm border-b border-gray-200/50 shadow-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-24 items-center">
-                <a href="#" class="flex items-center gap-3">
-                    <span class="font-elegant text-2xl tracking-widest uppercase font-light text-brand-charcoal">
-                        TACOS <span class="font-normal italic text-brand-oliva">Cebrian</span>
-                    </span>
+            <div class="flex justify-between h-20 items-center">
+                <a href="#" class="font-elegant text-xl tracking-widest uppercase font-light">
+                    TACOS <span class="font-normal italic text-brand-oliva">Cebrian</span>
                 </a>
-                <div class="hidden md:flex space-x-8 text-[10px] uppercase letter-track font-medium opacity-80">
-                    <a href="#" class="hover:text-brand-oliva transition">Inicio</a>
-                    <a href="#galeria" class="hover:text-brand-oliva transition">Galería</a>
-                    <a href="#horarios" class="hover:text-brand-oliva transition">Horarios</a>
-                    <a href="#reseñas" class="hover:text-brand-oliva transition">Reseñas</a>
-                    <a href="#contacto" class="hover:text-brand-oliva transition">Ubicación</a>
-                </div>
-                <a href="https://tacoscebrian.square.site/" target="_blank" class="btn-premium bg-brand-oliva hover:bg-brand-olivaLight text-white px-5 py-2.5 text-[10px] shadow-sm">
+                <a href="https://tacoscebrian.square.site/" target="_blank" class="bg-brand-oliva text-white px-5 py-2 text-[10px] uppercase letter-track font-medium shadow-sm hover:bg-brand-olivaLight transition">
                     Ver Menú
                 </a>
             </div>
         </div>
     </nav>
 
-    <section class="hero-bg h-[calc(100vh-96px)] flex items-center px-6 lg:px-24">
+    <section class="hero-bg h-[70vh] flex items-center px-6 lg:px-24 section-gap">
         <div class="max-w-3xl text-white">
-            <span class="text-white/80 text-[10px] uppercase letter-track font-semibold mb-4 block">Tradición & Sabor Auténtico</span>
             <h1 class="font-elegant text-5xl md:text-7xl font-light leading-tight mb-6">
-                El verdadero sabor de nuestra <br><span class="italic font-normal text-amber-400">cocina tradicional</span>
+                Sabor que trasciende <br><span class="italic font-normal text-amber-400">fronteras</span>
             </h1>
-            <p class="font-sans text-sm md:text-base font-light tracking-wide max-w-md opacity-95 mb-8 leading-relaxed">
-                Tacos al pastor, asada, birria y desayunos preparados diariamente con la frescura y el sazón que nos distingue.
-            </p>
-            <a href="https://tacoscebrian.square.site/" target="_blank" class="btn-premium bg-brand-rojo hover:bg-brand-charcoal text-white px-8 py-3.5 text-[10px] inline-flex items-center gap-3 transition shadow-lg">
-                Ordena en Línea (Square)
+            <a href="https://tacoscebrian.square.site/" target="_blank" class="bg-brand-rojo text-white px-8 py-3 text-[10px] uppercase letter-track font-semibold inline-block shadow-lg">
+                Ordena en Línea
             </a>
         </div>
     </section>
 
-    <section class="py-12 bg-[#F2EDE4] border-b border-gray-200/50 text-brand-charcoal text-center px-4">
-        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-[10px] uppercase font-medium letter-track">
-            <div class="flex flex-col items-center gap-2 py-2">
-                <span class="text-xl">🔥</span>
-                <p class="font-semibold text-brand-charcoal">Carnes Selectas al Momento</p>
-                <p class="text-[11px] font-light opacity-60 lowercase italic first-letter:uppercase">Pastor, asada y birria altamente recomendados</p>
+    <!-- Marquee México -->
+    <div class="marquee-mexico opacity-60"></div>
+
+    <section class="py-8 bg-[#F2EDE4] text-brand-charcoal text-center px-4 section-gap">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 text-[10px] uppercase font-medium letter-track">
+            <div class="flex flex-col items-center gap-1">
+                <span class="text-lg">🔥</span>
+                <p>Carnes Selectas</p>
             </div>
-            <div class="flex flex-col items-center gap-2 py-2">
-                <span class="text-xl">⚡</span>
-                <p class="font-semibold text-brand-charcoal">Servicio Veloz e Impecable</p>
-                <p class="text-[11px] font-light opacity-60 lowercase italic first-letter:uppercase">Tu comida lista, caliente y perfecta para disfrutar</p>
+            <div class="flex flex-col items-center gap-1">
+                <span class="text-lg">⚡</span>
+                <p>Servicio Veloz</p>
             </div>
-            <div class="flex flex-col items-center gap-2 py-2">
-                <span class="text-xl">☕</span>
-                <p class="font-semibold text-brand-charcoal">Champurrado Tradicional</p>
-                <p class="text-[11px] font-light opacity-60 lowercase italic first-letter:uppercase">Una de las joyas calientitas de nuestro menú</p>
+            <div class="flex flex-col items-center gap-1">
+                <span class="text-lg">☕</span>
+                <p>Champurrado de la Casa</p>
             </div>
         </div>
     </section>
 
-    <section id="galeria" class="py-20 px-6 lg:px-24 max-w-7xl mx-auto">
-        <div class="text-center mb-16">
-            <span class="text-[10px] uppercase letter-track font-semibold opacity-60 block mb-2">Capturas de Nuestro Sabor</span>
-            <h2 class="font-elegant text-4xl md:text-5xl font-light text-brand-charcoal">
-                Galería de la <span class="italic font-normal">Casa</span>
+    <div class="marquee-mexico opacity-60"></div>
+
+    <!-- Sección Galería con Fuente Montserrat -->
+    <section id="galeria" class="py-12 px-6 lg:px-24 max-w-7xl mx-auto section-gap">
+        <div class="text-center mb-8">
+            <h2 class="font-sans text-xs uppercase letter-track font-bold text-brand-oliva mb-2">
+                Galería de la casa
             </h2>
-            <div class="w-12 h-[1px] bg-brand-oliva mx-auto mt-4"></div>
+            <div class="w-8 h-[1px] bg-brand-charcoal/20 mx-auto"></div>
         </div>
 
-        <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
-            <div class="overflow-hidden bg-white/40 border border-gray-200/30 p-2 shadow-sm group aspect-square">
-                <img src="cer1.png" alt="Tacos Cebrian 1" class="w-full h-full object-cover transition duration-500 group-hover:scale-105">
-            </div>
-            <div class="overflow-hidden bg-white/40 border border-gray-200/30 p-2 shadow-sm group aspect-square">
-                <img src="cer2.png" alt="Tacos Cebrian 2" class="w-full h-full object-cover transition duration-500 group-hover:scale-105">
-            </div>
-            <div class="overflow-hidden bg-white/40 border border-gray-200/30 p-2 shadow-sm group aspect-square">
-                <img src="cer3.png" alt="Tacos Cebrian 3" class="w-full h-full object-cover transition duration-500 group-hover:scale-105">
-            </div>
-            <div class="overflow-hidden bg-white/40 border border-gray-200/30 p-2 shadow-sm group aspect-square">
-                <img src="cer4.png" alt="Tacos Cebrian 4" class="w-full h-full object-cover transition duration-500 group-hover:scale-105">
-            </div>
-            <div class="overflow-hidden bg-white/40 border border-gray-200/30 p-2 shadow-sm group aspect-square">
-                <img src="cer5.png" alt="Tacos Cebrian 5" class="w-full h-full object-cover transition duration-500 group-hover:scale-105">
-            </div>
-            <div class="overflow-hidden bg-white/40 border border-gray-200/30 p-2 shadow-sm group aspect-square">
-                <img src="cer6.png" alt="Tacos Cebrian 6" class="w-full h-full object-cover transition duration-500 group-hover:scale-105">
-            </div>
-            <div class="overflow-hidden bg-white/40 border border-gray-200/30 p-2 shadow-sm group aspect-square">
-                <img src="cer7.png" alt="Tacos Cebrian 7" class="w-full h-full object-cover transition duration-500 group-hover:scale-105">
-            </div>
-            <div class="overflow-hidden bg-white/40 border border-gray-200/30 p-2 shadow-sm group aspect-square">
-                <img src="cer8.png" alt="Tacos Cebrian 8" class="w-full h-full object-cover transition duration-500 group-hover:scale-105">
-            </div>
-            <div class="overflow-hidden bg-white/40 border border-gray-200/30 p-2 shadow-sm group aspect-square">
-                <img src="cer9.png" alt="Tacos Cebrian 9" class="w-full h-full object-cover transition duration-500 group-hover:scale-105">
-            </div>
-            <div class="overflow-hidden bg-white/40 border border-gray-200/30 p-2 shadow-sm group aspect-square">
-                <img src="cer10.png" alt="Tacos Cebrian 10" class="w-full h-full object-cover transition duration-500 group-hover:scale-105">
-            </div>
+        <div class="grid grid-cols-2 md:grid-cols-5 gap-3">
+            <div class="aspect-square bg-gray-100 overflow-hidden border border-gray-200/50 p-1 shadow-sm"><img src="cer1.png" class="w-full h-full object-cover"></div>
+            <div class="aspect-square bg-gray-100 overflow-hidden border border-gray-200/50 p-1 shadow-sm"><img src="cer2.png" class="w-full h-full object-cover"></div>
+            <div class="aspect-square bg-gray-100 overflow-hidden border border-gray-200/50 p-1 shadow-sm"><img src="cer3.png" class="w-full h-full object-cover"></div>
+            <div class="aspect-square bg-gray-100 overflow-hidden border border-gray-200/50 p-1 shadow-sm"><img src="cer4.png" class="w-full h-full object-cover"></div>
+            <div class="aspect-square bg-gray-100 overflow-hidden border border-gray-200/50 p-1 shadow-sm"><img src="cer5.png" class="w-full h-full object-cover"></div>
+            <div class="aspect-square bg-gray-100 overflow-hidden border border-gray-200/50 p-1 shadow-sm"><img src="cer6.png" class="w-full h-full object-cover"></div>
+            <div class="aspect-square bg-gray-100 overflow-hidden border border-gray-200/50 p-1 shadow-sm"><img src="cer7.png" class="w-full h-full object-cover"></div>
+            <div class="aspect-square bg-gray-100 overflow-hidden border border-gray-200/50 p-1 shadow-sm"><img src="cer8.png" class="w-full h-full object-cover"></div>
+            <div class="aspect-square bg-gray-100 overflow-hidden border border-gray-200/50 p-1 shadow-sm"><img src="cer9.png" class="w-full h-full object-cover"></div>
+            <div class="aspect-square bg-gray-100 overflow-hidden border border-gray-200/50 p-1 shadow-sm"><img src="cer10.png" class="w-full h-full object-cover"></div>
         </div>
     </section>
 
-    <section id="horarios" class="bg-[#F2EDE4] py-20 px-6 lg:px-24">
-        <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-16 items-center">
-            <div>
-                <span class="text-xs uppercase letter-track font-semibold opacity-60 block mb-2">Planea tu Visita</span>
-                <h2 class="font-elegant text-4xl font-light leading-tight text-brand-charcoal mb-6">
-                    Te esperamos para desayunar <span class="italic block font-normal">o cenar</span>
-                </h2>
-                <div class="space-y-4 font-light text-sm text-gray-700 leading-relaxed">
-                    <p class="border-b border-gray-300 pb-2"><strong>Lunes a Sábado:</strong> Abierto en dos turnos primordiales.</p>
-                    <p>🌤️ <strong>Desayunos:</strong> 6:00 AM - 11:00 AM</p>
-                    <p>🌙 <strong>Almuerzo y Cena:</strong> 3:00 PM - 12:00 AM</p>
-                    <p class="text-xs opacity-60 italic pt-2">* Domingos: Cerrado por descanso del equipo.</p>
+    <div class="marquee-mexico opacity-60"></div>
+
+    <!-- Sección Horarios Corregidos -->
+    <section id="horarios" class="bg-[#F2EDE4] py-12 px-6 lg:px-24 section-gap">
+        <div class="max-w-4xl mx-auto text-center">
+            <span class="text-[10px] uppercase letter-track font-bold opacity-40 block mb-4">Monday - Saturday</span>
+            <div class="grid md:grid-cols-2 gap-8 items-center border-y border-gray-300/50 py-8">
+                <div class="space-y-2">
+                    <p class="font-elegant text-2xl italic">Breakfast Menu ⏰</p>
+                    <p class="font-sans text-lg font-light tracking-widest">6:00 AM - 11:00 AM</p>
+                </div>
+                <div class="space-y-2">
+                    <p class="font-elegant text-2xl italic">Lunch Menu ⏰</p>
+                    <p class="font-sans text-lg font-light tracking-widest">3:00 PM - 12:00 AM</p>
                 </div>
             </div>
-            <div class="bg-white/60 border border-gray-200/60 p-8 shadow-sm">
-                <h3 class="font-elegant text-2xl tracking-wide font-medium mb-4">Plataforma de Órdenes</h3>
-                <p class="text-xs font-light text-gray-600 leading-relaxed mb-6">
-                    Explora todo nuestro menú interactivo, revisa precios en tiempo real y realiza tu pedido de forma anticipada a través de Square para agilizar tu entrega.
-                </p>
-                <a href="https://tacoscebrian.square.site/" target="_blank" class="text-[10px] uppercase letter-track font-semibold text-brand-oliva hover:text-brand-olivaLight block border-t pt-4 text-right">Consultar Precios e Ir a Square →</a>
-            </div>
+            <p class="text-[9px] uppercase letter-track mt-6 opacity-40 italic">Closed on Sundays</p>
         </div>
     </section>
 
-    <section id="reseñas" class="py-20 px-6 max-w-7xl mx-auto text-center">
-        <span class="text-[10px] uppercase letter-track font-semibold opacity-60 block mb-4">La opinión de nuestra comunidad</span>
-        <h2 class="font-elegant text-3xl font-light text-brand-charcoal mb-12">Lo que dicen nuestros clientes</h2>
-        <div class="grid md:grid-cols-3 gap-12">
-            <div class="border-l border-brand-oliva/20 px-6 text-left">
-                <div class="text-amber-500 text-xs mb-2">★★★★★</div>
-                <p class="font-elegant text-base italic font-light text-brand-charcoal mb-3 leading-relaxed">
-                    "The food here is delicious and the service is always fast... My favorite meat is the asada, al pastor and birria. Ooohhh and they have one of the best champurados ever!"
-                </p>
-                <span class="text-xs uppercase letter-track font-medium opacity-60">— sosa salaaa, Local Guide</span>
+    <footer class="bg-brand-charcoal text-white py-12 px-6">
+        <div class="max-w-7xl mx-auto text-center space-y-6">
+            <p class="font-elegant text-2xl tracking-widest font-light">TACOS CEBRIAN</p>
+            <p class="text-[10px] uppercase letter-track opacity-50">1707 Pennsylvania Ave, Los Angeles, CA 90033</p>
+            <div class="pt-6 border-t border-white/5 text-[9px] opacity-30">
+                © 2026 Tacos Cebrian.
             </div>
-            <div class="border-l border-brand-oliva/20 px-6 text-left">
-                <div class="text-amber-500 text-xs mb-2">★★★★★</div>
-                <p class="font-elegant text-base italic font-light text-brand-charcoal mb-3 leading-relaxed">
-                    "Amazzzzziiiinnnnggg comfort food! Flavorful! Delicious! Totally made my day after having to visit the dreary hospital. 100/10"
-                </p>
-                <span class="text-xs uppercase letter-track font-medium opacity-60">— Riot V, Cliente Satisfecho</span>
-            </div>
-            <div class="border-l border-brand-oliva/20 px-6 text-left">
-                <div class="text-amber-500 text-xs mb-2">★★★★★</div>
-                <p class="font-elegant text-base italic font-light text-brand-charcoal mb-3 leading-relaxed">
-                    "I really like the Tacos here! They're the best when it comes to tacos!"
-                </p>
-                <span class="text-xs uppercase letter-track font-medium opacity-60">— Charie Harrison, Local Guide</span>
-            </div>
-        </div>
-    </section>
-
-    <section id="contacto" class="py-16 px-6 max-w-7xl mx-auto text-center border-t border-gray-200/50">
-        <span class="text-[10px] uppercase letter-track font-semibold opacity-60 block mb-1">Ubicación</span>
-        <h2 class="font-elegant text-3xl font-light text-brand-charcoal mb-6">Visítanos en Los Ángeles</h2>
-        <p class="text-xs font-light text-gray-600 mb-8 tracking-wide">1707 Pennsylvania Ave, Los Angeles, CA 90033</p>
-        <div class="w-full overflow-hidden shadow-sm max-w-4xl mx-auto aspect-[16/9] md:aspect-[21/9] bg-white p-2 border border-gray-200">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6611.636733677651!2d-118.2187899968113!3d34.04853001223514!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2c611faa6e019%3A0x2e6ef59298a63c1a!2sTacos%20Cebrian!5e0!3m2!1ses!2smx!4v1780333018680!5m2!1ses!2smx" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </div>
-    </section>
-
-    <footer class="bg-brand-charcoal text-white py-16 px-6 lg:px-24">
-        <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-12 text-sm font-light">
-            <div class="space-y-4">
-                <p class="font-elegant text-2xl tracking-widest font-light">TACOS CEBRIAN</p>
-                <p class="text-[10px] uppercase letter-track opacity-50 -mt-2">Los Angeles, CA</p>
-            </div>
-            <div>
-                <h4 class="font-medium uppercase text-xs letter-track opacity-50 mb-4">Enlaces</h4>
-                <ul class="space-y-2 text-xs uppercase letter-track font-medium opacity-80">
-                    <li><a href="#" class="hover:underline">Inicio</a></li>
-                    <li><a href="#galeria" class="hover:underline">Galería</a></li>
-                    <li><a href="#horarios" class="hover:underline">Horarios</a></li>
-                    <li><a href="#reseñas" class="hover:underline">Reseñas</a></li>
-                </ul>
-            </div>
-            <div class="space-y-2">
-                <h4 class="font-medium uppercase text-xs letter-track opacity-50 mb-2">Contacto</h4>
-                <p class="text-xs opacity-90">Teléfono: <a href="tel:3233354479" class="underline">323-335-4479</a></p>
-                <p class="text-xs opacity-90">Instagram: <a href="https://www.instagram.com/tacos_cebrian/" target="_blank" class="underline">@tacos_cebrian</a></p>
-            </div>
-        </div>
-        <div class="max-w-7xl mx-auto border-t border-white/10 mt-10 pt-6 flex flex-col sm:flex-row justify-between items-center text-[11px] opacity-40 gap-4">
-            <p>© 2026 Tacos Cebrian. Todos los derechos reservados.</p>
-            <p>Diseño Web de Alta Gama</p>
         </div>
     </footer>
 
